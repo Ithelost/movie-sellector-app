@@ -1,12 +1,18 @@
 import React from 'react';
 import './App.css';
 import searchImdb from './api/imdbAPI'
+import searchOmdb from './api/omdbAPI'
+
+import MoviePanel from './components/moviePanel'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     
-    this.state = {movieQuery: ''};
+    this.state = {
+      movieQuery: '',
+      movies: []
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,6 +26,7 @@ class App extends React.Component {
     searchImdb(this.state.movieQuery)
       .then(results => {
         console.log(results);
+        this.setState({movies: results.d})
       })
     event.preventDefault();
   }
@@ -35,6 +42,9 @@ class App extends React.Component {
           <input type="submit" value="Submit" />
         </form>
         
+        <div>
+          {this.state.movies.map(movie => <MoviePanel key={movie.id} movie={movie} />)}
+        </div>
       </div>
     );
   }  

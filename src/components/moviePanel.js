@@ -1,40 +1,38 @@
-// import React from 'react';
+import React from 'react';
 
-// class MoviePanel extends React.Component {
-//   constructor(props) {
-//     super(props);
-    
-//     this.state = {
-//       title: props.l,
-//       actors: props.s,
-//       year: props.y
-//     };
+class MoviePanel extends React.Component {
+  constructor(props) {
+    super(props);
 
-//     this.handleChange = this.handleChange.bind(this);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
+    this.state = {
+      title: props.movie.l,
+      actors: props.movie.s,
+      year: props.movie.y
+    };
 
-//   handleChange(event) {
-//     this.setState({movieQuery: event.target.value});
-//   }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-//   handleSubmit(event) {
-//   }
+  handleChange(event) {
+    //this.setState({movieQuery: event.target.value});
+  }
+
+  handleSubmit(event) {
+  }
   
-//   render() {
-//     return (
-//       <div className="MoviePanel">
-//         <form onSubmit={this.handleSubmit}>
-//           <label>
-//               Name:
-//               <input type="text" value={this.state.movieQuery} onChange={this.handleChange} />
-//           </label>
-//           <input type="submit" value="Submit" />
-//         </form>
+  render() {
+    return (
+      <div className="MoviePanel">
+        <form onSubmit={this.handleSubmit}>
+          <h4> {this.state.title} </h4>
+          <h4> {this.state.actors} </h4>
+          <input type="submit" value="Submit" />
+        </form>
 
-//       </div>
-//     );
-//   }  
-// }
+      </div>
+    );
+  }  
+}
 
-// export default MoviePanel;
+export default MoviePanel;
