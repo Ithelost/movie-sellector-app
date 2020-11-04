@@ -5,31 +5,19 @@ class MoviePanel extends React.Component {
     super(props);
 
     this.state = {
-      title: props.movie.l,
-      actors: props.movie.s,
-      year: props.movie.y
+      poster: props.movie.Poster,
+      title: props.movie.Title,
+      type: props.movie.Type,
+      year: props.movie.Year,
+      id: props.movie.imdbID
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    //this.setState({movieQuery: event.target.value});
-  }
-
-  handleSubmit(event) {
-  }
-  
   render() {
     return (
-      <div className="MoviePanel">
-        <form onSubmit={this.handleSubmit}>
-          <h4> {this.state.title} </h4>
-          <h4> {this.state.actors} </h4>
-          <input type="submit" value="Submit" />
-        </form>
-
+      <div className="center">
+        <h4> {this.state.title} </h4>
+        <button onClick={() => {this.props.addToSelectedMovies(this.state.id)}}>submit</button>
       </div>
     );
   }  
