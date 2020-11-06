@@ -2,6 +2,8 @@ import React from 'react';
 
 class PersonalSelectedMovie extends React.Component {
 
+  // TODO do some css
+  
   render() {
     return (
       <div className="span-2">
