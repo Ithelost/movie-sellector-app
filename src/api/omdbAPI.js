@@ -6,7 +6,7 @@ import $ from 'jquery'
 export async function searchWithTitel(query) {
   try {
     const results = await $.ajax({
-      url: 'http://www.omdbapi.com/?apikey=a455290f&s=' + query,
+      url: 'https://www.omdbapi.com/?apikey=a455290f&s=' + query,
       dataType: 'json',
       cache: true,
     });
@@ -19,7 +19,7 @@ export async function searchWithTitel(query) {
 export async function searchWithId(imdbId) {
   try {
     const results = await $.ajax({
-      url: 'http://www.omdbapi.com/?apikey=a455290f&i=' + imdbId,
+      url: 'https://www.omdbapi.com/?apikey=a455290f&i=' + imdbId,
       dataType: 'json',
       cache: true,
     });
