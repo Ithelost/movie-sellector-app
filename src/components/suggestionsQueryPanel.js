@@ -74,6 +74,7 @@ class SuggestionsQueryPanel extends React.Component {
       return false;
     })
 
+    // TODO make it so it only saves 3 movies max
     const copyState = {...this.state};
     copyState.movieSuggestionResult = movieSuggestionResult;
     this.setState(copyState);
@@ -114,9 +115,9 @@ class SuggestionsQueryPanel extends React.Component {
         </form>
         
         {
-          this.state.movieSuggestionResult.map(movie => 
+          this.state.movieSuggestionResult.length !==0 ? this.state.movieSuggestionResult.map(movie => 
             <h2 id={movie.imdbID} className="overlay-content">{movie.Title}</h2>
-          )
+          ) : <h2 id="empty" className="overlay-content">No match found</h2>
         }
       </div>
     );
