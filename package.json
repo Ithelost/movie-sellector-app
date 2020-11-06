@@ -1,7 +1,7 @@
 {
   "name": "movie-sellector-app",
   "version": "0.1.0",
-  "homepage":"https://Ithelost.github.io/movie-sellector-app",
+  "homepage": "https://Ithelost.github.io/movie-sellector-app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.5",
@@ -15,6 +15,8 @@
   },
   "proxy": "http://www.omdbapi.com",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "http-proxy-middleware": "^1.0.6"
   }
 }
