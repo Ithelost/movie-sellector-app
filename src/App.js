@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 
+import PersonalSelectedMovie from './components/personalSelectedMovie'
 import MoviePanel from './components/moviePanel'
-import searchWithTitel, { searchWithId } from './api/omdbAPI';
+import SuggestionsQueryPanel from './components/suggestionsQueryPanel'
 
 import { searchWithTitel, searchWithId } from './api/omdbAPI';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -62,6 +64,15 @@ class App extends React.Component {
     copyState.selectedMovies.splice(index, 1);
     this.setState(copyState)
   }
+
+  suggestMoviesBtn = () => {
+    var x = document.getElementById("suggestMovies");
+    if (x.style.width !== "100%") {
+      x.style.width = "100%";
+    } else {
+      x.style.width = "0%";
+    }
+  }
   
   render() {
     return (
@@ -92,6 +103,10 @@ class App extends React.Component {
             }
           </div>
         </div>
+
+        {/* <SuggestionsQueryPanel selectedMovies={[{Genre: 'fantasy, horror', Language: 'English'}]} closeBtn={this.suggestMoviesBtn}></SuggestionsQueryPanel> */}
+        <SuggestionsQueryPanel selectedMovies={this.state.selectedMovies} closeBtn={this.suggestMoviesBtn}></SuggestionsQueryPanel>
+
       </div>
     );
   }  
