@@ -1,4 +1,5 @@
 import React from 'react';
+// import './moviePanel.css';
 
 class MoviePanel extends React.Component {
   constructor(props) {
