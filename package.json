@@ -1,6 +1,7 @@
 {
   "name": "movie-sellector-app",
   "version": "0.1.0",
+  "homepage":"https://Ithelost.github.io/movie-sellector-app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.5",
