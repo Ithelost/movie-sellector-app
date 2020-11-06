@@ -88,7 +88,7 @@ class App extends React.Component {
         </form>
         
         <div className="grid-container">
-          <div className="span-1">
+          <div className="grid-container-movie-panel">
             {
               this.state.movies
               .map(movie => 
@@ -97,7 +97,7 @@ class App extends React.Component {
             }
           </div>
 
-          <div className="span-2">
+          <div>
             <button onClick={() => this.suggestMoviesBtn()}>suggest</button>
             {
               this.state.selectedMovies
