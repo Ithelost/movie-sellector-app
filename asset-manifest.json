@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/movie-sellector-app/static/css/main.bf2c5982.chunk.css",
-    "main.js": "/movie-sellector-app/static/js/main.33cd34db.chunk.js",
-    "main.js.map": "/movie-sellector-app/static/js/main.33cd34db.chunk.js.map",
+    "main.js": "/movie-sellector-app/static/js/main.b5423e8e.chunk.js",
+    "main.js.map": "/movie-sellector-app/static/js/main.b5423e8e.chunk.js.map",
     "runtime-main.js": "/movie-sellector-app/static/js/runtime-main.5226bae7.js",
     "runtime-main.js.map": "/movie-sellector-app/static/js/runtime-main.5226bae7.js.map",
     "static/js/2.a6a667da.chunk.js": "/movie-sellector-app/static/js/2.a6a667da.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5226bae7.js",
     "static/js/2.a6a667da.chunk.js",
     "static/css/main.bf2c5982.chunk.css",
-    "static/js/main.33cd34db.chunk.js"
+    "static/js/main.b5423e8e.chunk.js"
   ]
 }
