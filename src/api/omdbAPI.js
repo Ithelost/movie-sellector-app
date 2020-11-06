@@ -3,7 +3,7 @@
 import $ from 'jquery'
 
 //IMDB will only return a maximum of 8 movies
-export default async function searchWithTitel(query) {
+export async function searchWithTitel(query) {
   try {
     const results = await $.ajax({
       url: 'http://www.omdbapi.com/?apikey=a455290f&s=' + query,
