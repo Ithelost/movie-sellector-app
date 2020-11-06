@@ -20,7 +20,9 @@ class App extends React.Component {
   }
 
   handleChangeMovieQuery = (event) => {
-    this.setState({movieQuery: event.target.value});
+    const copyState = {...this.state};
+    copyState.movieQuery = event.target.value;
+    this.setState(copyState);
   }
 
   handleSubmit = (event) => {
@@ -87,7 +89,8 @@ class App extends React.Component {
         
         <div className="grid-container">
           <div className="span-1">
-            {this.state.movies
+            {
+              this.state.movies
               .map(movie => 
                 <MoviePanel key={movie.imdbID} movie={movie} addToSelectedMovies={this.addToSelectedMovies}/>
               )
@@ -96,7 +99,8 @@ class App extends React.Component {
 
           <div className="span-2">
             <button onClick={() => this.suggestMoviesBtn()}>suggest</button>
-            {this.state.selectedMovies
+            {
+              this.state.selectedMovies
               .map(selectedMovies => 
                 <PersonalSelectedMovie key={selectedMovies.imdbID} movie={selectedMovies} removeSelectedMovie={this.removeSelectedMovie}></PersonalSelectedMovie>
               )
