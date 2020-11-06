@@ -4,6 +4,8 @@ import './App.css';
 import MoviePanel from './components/moviePanel'
 import searchWithTitel, { searchWithId } from './api/omdbAPI';
 
+import { searchWithTitel, searchWithId } from './api/omdbAPI';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,7 @@ class App extends React.Component {
     };
   }
 
-  handleChange = (event) => {
+  handleChangeMovieQuery = (event) => {
     this.setState({movieQuery: event.target.value});
   }
 
@@ -29,7 +31,11 @@ class App extends React.Component {
 
     searchWithTitel(this.state.movieQuery)
       .then(results => {
-        this.setState({movies: results.Search});
+        if (results.Response === "True") this.setState({movies: results.Search});
+        else {
+          //TODO Movies not found
+          alert("No movies found!")
+        }
       });
   }
 
@@ -63,7 +69,7 @@ class App extends React.Component {
         <form className="search-bar" onSubmit={this.handleSubmit}>
           <label>
             Name:
-            <input type="text" value={this.state.movieQuery} onChange={this.handleChange} />
+            <input type="text" value={this.state.movieQuery} onChange={this.handleChangeMovieQuery} />
           </label>
           <input type="submit" value="Submit" />
         </form>
@@ -73,16 +79,15 @@ class App extends React.Component {
             {this.state.movies
               .map(movie => 
                 <MoviePanel key={movie.imdbID} movie={movie} addToSelectedMovies={this.addToSelectedMovies}/>
-              )}
+              )
+            }
           </div>
 
           <div className="span-2">
+            <button onClick={() => this.suggestMoviesBtn()}>suggest</button>
             {this.state.selectedMovies
               .map(selectedMovies => 
-                <React.Fragment>
-                  <h6 key={selectedMovies.imdbID}>{selectedMovies.Title}</h6>
-                  <button onClick={(e) => this.removeSelectedMovie(selectedMovies.imdbId, e)}>Remove</button>
-                </React.Fragment>
+                <PersonalSelectedMovie key={selectedMovies.imdbID} movie={selectedMovies} removeSelectedMovie={this.removeSelectedMovie}></PersonalSelectedMovie>
               )
             }
           </div>
