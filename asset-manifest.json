@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/movie-sellector-app/static/css/main.bf2c5982.chunk.css",
-    "main.js": "/movie-sellector-app/static/js/main.b5423e8e.chunk.js",
-    "main.js.map": "/movie-sellector-app/static/js/main.b5423e8e.chunk.js.map",
-    "runtime-main.js": "/movie-sellector-app/static/js/runtime-main.5226bae7.js",
-    "runtime-main.js.map": "/movie-sellector-app/static/js/runtime-main.5226bae7.js.map",
-    "static/js/2.a6a667da.chunk.js": "/movie-sellector-app/static/js/2.a6a667da.chunk.js",
-    "static/js/2.a6a667da.chunk.js.map": "/movie-sellector-app/static/js/2.a6a667da.chunk.js.map",
-    "static/js/3.fea5da1e.chunk.js": "/movie-sellector-app/static/js/3.fea5da1e.chunk.js",
-    "static/js/3.fea5da1e.chunk.js.map": "/movie-sellector-app/static/js/3.fea5da1e.chunk.js.map",
+    "main.css": "/movie-sellector-app/static/css/main.5baa5660.chunk.css",
+    "main.js": "/movie-sellector-app/static/js/main.393fc7c7.chunk.js",
+    "main.js.map": "/movie-sellector-app/static/js/main.393fc7c7.chunk.js.map",
+    "runtime-main.js": "/movie-sellector-app/static/js/runtime-main.a4e377a2.js",
+    "runtime-main.js.map": "/movie-sellector-app/static/js/runtime-main.a4e377a2.js.map",
+    "static/js/2.6ad6de08.chunk.js": "/movie-sellector-app/static/js/2.6ad6de08.chunk.js",
+    "static/js/2.6ad6de08.chunk.js.map": "/movie-sellector-app/static/js/2.6ad6de08.chunk.js.map",
+    "static/js/3.2783feff.chunk.js": "/movie-sellector-app/static/js/3.2783feff.chunk.js",
+    "static/js/3.2783feff.chunk.js.map": "/movie-sellector-app/static/js/3.2783feff.chunk.js.map",
     "index.html": "/movie-sellector-app/index.html",
-    "static/css/main.bf2c5982.chunk.css.map": "/movie-sellector-app/static/css/main.bf2c5982.chunk.css.map",
-    "static/js/2.a6a667da.chunk.js.LICENSE.txt": "/movie-sellector-app/static/js/2.a6a667da.chunk.js.LICENSE.txt"
+    "static/css/main.5baa5660.chunk.css.map": "/movie-sellector-app/static/css/main.5baa5660.chunk.css.map",
+    "static/js/2.6ad6de08.chunk.js.LICENSE.txt": "/movie-sellector-app/static/js/2.6ad6de08.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5226bae7.js",
-    "static/js/2.a6a667da.chunk.js",
-    "static/css/main.bf2c5982.chunk.css",
-    "static/js/main.b5423e8e.chunk.js"
+    "static/js/runtime-main.a4e377a2.js",
+    "static/js/2.6ad6de08.chunk.js",
+    "static/css/main.5baa5660.chunk.css",
+    "static/js/main.393fc7c7.chunk.js"
   ]
 }
