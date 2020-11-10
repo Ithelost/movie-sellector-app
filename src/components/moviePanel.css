@@ -1,35 +1,25 @@
 .owl-item {
-  display: block;
-}
-
-.owl-item h4 {
   text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.title-wrapper {
+  display: inline-block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.title-wrapper h4 {
   max-width: 300px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 0;
-  /* margin-inline-start: 0;
-  margin-inline-end: 0; */
-
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
-.submit-wrapper {
- display: flex;
- justify-content: center;
-}
-
-.submit-wrapper p {
-  font-weight: bold;
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
+.title-wrapper p {
   margin: 0;
-  border: 1px solid black;
-  border-radius: 16px;
-  cursor: pointer;
-}
-
-.submit-wrapper p:hover, .submit-wrapper p:focus {
-  color: grey;
-  border-color: grey !important;
+  padding: 2px;
 }

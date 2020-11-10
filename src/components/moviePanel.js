@@ -1,6 +1,8 @@
 import React from 'react';
 import './moviePanel.css';
 
+import CustomButton from './button/customButton'
+
 class MoviePanel extends React.Component {
   constructor(props) {
     super(props);
@@ -18,8 +20,11 @@ class MoviePanel extends React.Component {
     return (
       <div className="owl-item">
         <img src={this.state.poster} alt={this.state.title}></img>
-        <h4> {this.state.title} </h4>
-        <div className="submit-wrapper"> <p onClick={() => {this.props.addToSelectedMovies(this.state.id)}}>Add to my list</p> </div>
+        <div className="title-wrapper"> 
+          <h4> {this.state.title + ' - (' + this.state.year + ')'} </h4> 
+          <p> {this.state.type} </p> 
+        </div>
+        <CustomButton title="Add to my list" onClickBtn={(e) => {this.props.addToSelectedMovies(this.state.id, e)}}></CustomButton>
       </div>
     );
   }  

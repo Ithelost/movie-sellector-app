@@ -1,4 +1,6 @@
 import React from 'react';
+import CustomButton from './button/customButton';
+import './personalSelectedMovie.css';
 
 class PersonalSelectedMovie extends React.Component {
 
@@ -6,9 +8,10 @@ class PersonalSelectedMovie extends React.Component {
   
   render() {
     return (
-      <div className="span-2">
-        <h6 key={this.props.movie.imdbID}>{this.props.movie.Title}</h6>
-        <button onClick={(e) => this.props.removeSelectedMovie(this.props.movie.imdbID, e)}>Remove</button>
+      <div className="selected-movie-box">
+        <h3 key={this.props.movie.imdbID}>{this.props.movie.Title + ' - (' + this.props.movie.Year + ')'  }</h3>
+        <CustomButton title="Remove" onClickBtn={(e) => this.props.removeSelectedMovie(this.props.movie.imdbID, e)}></CustomButton>
+        <CustomButton title="Info" onClickBtn={(e) => alert('function not implemented yet')}></CustomButton>
       </div>
     );
   }  

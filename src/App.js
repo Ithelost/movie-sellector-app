@@ -6,6 +6,7 @@ import MoviePanel from './components/moviePanel'
 import SuggestionsQueryPanel from './components/suggestionsQueryPanel'
 
 import { searchWithTitel, searchWithId } from './api/omdbAPI';
+import CustomButton from './components/button/customButton';
 
 
 class App extends React.Component {
@@ -17,6 +18,19 @@ class App extends React.Component {
       movies: [],
       selectedMovies: []
     };
+
+    window.onresize = window.onload = function() {
+      var gridElement = document.querySelector('.grid-container-movie-panel');
+    
+      var width = window.innerWidth;
+      var collums = 4;
+      
+      if (width < 1600) collums -= 1;
+      if (width < 1300) collums -= 1;
+      if (width < 1000) collums -= 1;
+      
+      gridElement.style["grid-template-columns"] = "repeat(" + collums + ", auto)";
+    }
   }
 
   handleChangeMovieQuery = (event) => {
@@ -43,7 +57,9 @@ class App extends React.Component {
       });
   }
 
-  addToSelectedMovies = (movieId) => {
+  addToSelectedMovies = (movieId, event) => {
+    event.preventDefault();
+
     const isSelected = this.state.selectedMovies.some(movie => 
       movie.imdbID === movieId
     );
@@ -59,7 +75,7 @@ class App extends React.Component {
   }
 
   removeSelectedMovie = (movieId, event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     const copyState = {...this.state};
     const index = copyState.selectedMovies.findIndex(m => m.imdbID === movieId);
@@ -81,10 +97,9 @@ class App extends React.Component {
       <div className="App">
         <form className="search-bar" onSubmit={this.handleSubmit}>
           <label>
-            Name:
-            <input type="text" value={this.state.movieQuery} onChange={this.handleChangeMovieQuery} />
+            <input type="text" value={this.state.movieQuery} onChange={this.handleChangeMovieQuery} placeholder="Type here the name of a movie or serrie"/>
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit"/>
         </form>
         
         <div className="grid-container">
@@ -97,8 +112,11 @@ class App extends React.Component {
             }
           </div>
 
-          <div>
-            <button onClick={() => this.suggestMoviesBtn()}>suggest</button>
+          <div className="grid-container-sellected-movies" hidden={this.state.movies.length === 0}>
+            <div className="header-sellected-movies">
+              <p>Your sellected movies and serries</p>
+              <CustomButton title="Start sellection" onClickBtn={() => this.suggestMoviesBtn()}></CustomButton>
+            </div>
             {
               this.state.selectedMovies
               .map(selectedMovies => 
