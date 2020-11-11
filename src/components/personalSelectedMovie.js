@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from './button/customButton';
+import CustomButton from './customElements/customButton';
 import './personalSelectedMovie.css';
 
 class PersonalSelectedMovie extends React.Component {

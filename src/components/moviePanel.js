@@ -1,11 +1,15 @@
 import React from 'react';
 import './moviePanel.css';
 
-import CustomButton from './button/customButton'
+import CustomButton from './customElements/customButton'
 
 class MoviePanel extends React.Component {
   constructor(props) {
     super(props);
+
+    
+    const poster = props.movie.Poster === "N/A" ? props.movie.Poster : "./resources/empty_image.png"
+    console.log(poster)
 
     this.state = {
       poster: props.movie.Poster,

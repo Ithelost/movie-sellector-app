@@ -6,7 +6,7 @@ import MoviePanel from './components/moviePanel'
 import SuggestionsQueryPanel from './components/suggestionsQueryPanel'
 
 import { searchWithTitel, searchWithId } from './api/omdbAPI';
-import CustomButton from './components/button/customButton';
+import CustomButton from './components/customElements/customButton';
 
 
 class App extends React.Component {
