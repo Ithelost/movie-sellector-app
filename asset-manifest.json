@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/movie-sellector-app/static/css/main.5baa5660.chunk.css",
-    "main.js": "/movie-sellector-app/static/js/main.393fc7c7.chunk.js",
-    "main.js.map": "/movie-sellector-app/static/js/main.393fc7c7.chunk.js.map",
-    "runtime-main.js": "/movie-sellector-app/static/js/runtime-main.a4e377a2.js",
-    "runtime-main.js.map": "/movie-sellector-app/static/js/runtime-main.a4e377a2.js.map",
-    "static/js/2.6ad6de08.chunk.js": "/movie-sellector-app/static/js/2.6ad6de08.chunk.js",
-    "static/js/2.6ad6de08.chunk.js.map": "/movie-sellector-app/static/js/2.6ad6de08.chunk.js.map",
-    "static/js/3.2783feff.chunk.js": "/movie-sellector-app/static/js/3.2783feff.chunk.js",
-    "static/js/3.2783feff.chunk.js.map": "/movie-sellector-app/static/js/3.2783feff.chunk.js.map",
-    "index.html": "/movie-sellector-app/index.html",
-    "static/css/main.5baa5660.chunk.css.map": "/movie-sellector-app/static/css/main.5baa5660.chunk.css.map",
-    "static/js/2.6ad6de08.chunk.js.LICENSE.txt": "/movie-sellector-app/static/js/2.6ad6de08.chunk.js.LICENSE.txt"
+    "main.css": "/movie-suggestion-app/static/css/main.44afe1c8.chunk.css",
+    "main.js": "/movie-suggestion-app/static/js/main.b75cec51.chunk.js",
+    "main.js.map": "/movie-suggestion-app/static/js/main.b75cec51.chunk.js.map",
+    "runtime-main.js": "/movie-suggestion-app/static/js/runtime-main.81585504.js",
+    "runtime-main.js.map": "/movie-suggestion-app/static/js/runtime-main.81585504.js.map",
+    "static/js/2.f4b9ff80.chunk.js": "/movie-suggestion-app/static/js/2.f4b9ff80.chunk.js",
+    "static/js/2.f4b9ff80.chunk.js.map": "/movie-suggestion-app/static/js/2.f4b9ff80.chunk.js.map",
+    "static/js/3.93857d5f.chunk.js": "/movie-suggestion-app/static/js/3.93857d5f.chunk.js",
+    "static/js/3.93857d5f.chunk.js.map": "/movie-suggestion-app/static/js/3.93857d5f.chunk.js.map",
+    "index.html": "/movie-suggestion-app/index.html",
+    "static/css/main.44afe1c8.chunk.css.map": "/movie-suggestion-app/static/css/main.44afe1c8.chunk.css.map",
+    "static/js/2.f4b9ff80.chunk.js.LICENSE.txt": "/movie-suggestion-app/static/js/2.f4b9ff80.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a4e377a2.js",
-    "static/js/2.6ad6de08.chunk.js",
-    "static/css/main.5baa5660.chunk.css",
-    "static/js/main.393fc7c7.chunk.js"
+    "static/js/runtime-main.81585504.js",
+    "static/js/2.f4b9ff80.chunk.js",
+    "static/css/main.44afe1c8.chunk.css",
+    "static/js/main.b75cec51.chunk.js"
   ]
 }
