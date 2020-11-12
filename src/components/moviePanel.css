@@ -23,3 +23,8 @@
   margin: 0;
   padding: 2px;
 }
+
+.test {
+  background: url(../resources/empty_image.png) no-repeat;
+  background-size: cover;
+}

@@ -19,18 +19,23 @@ class App extends React.Component {
       selectedMovies: []
     };
 
+    const self = this;
     window.onresize = window.onload = function() {
-      var gridElement = document.querySelector('.grid-container-movie-panel');
-    
-      var width = window.innerWidth;
-      var collums = 4;
-      
-      if (width < 1600) collums -= 1;
-      if (width < 1300) collums -= 1;
-      if (width < 1000) collums -= 1;
-      
-      gridElement.style["grid-template-columns"] = "repeat(" + collums + ", auto)";
+      self.handleGridElementChanges();
     }
+  }
+
+  handleGridElementChanges = () => {
+    var gridElement = document.querySelector('.grid-container-movie-panel');
+    
+    var width = window.innerWidth;
+    var collums = 4;
+    
+    if (width < 1600) collums -= 1;
+    if (width < 1300) collums -= 1;
+    if (width < 1000) collums -= 1;
+    
+    gridElement.style["grid-template-columns"] = "repeat(" + collums + ", auto)";
   }
 
   handleChangeMovieQuery = (event) => {
@@ -46,12 +51,15 @@ class App extends React.Component {
       alert("Type the name of the movie"); 
       return;
     }
-
+    
     searchWithTitel(this.state.movieQuery)
-      .then(results => {
-        if (results.Response === "True") this.setState({movies: results.Search});
-        else {
-          //TODO Movies not found
+    .then(results => {
+      if (results.Response === "True") {
+        this.setState({movies: results.Search});
+        this.handleGridElementChanges();
+      }
+      else {
+        //TODO Movies not found
           alert("No movies found!")
         }
       });
