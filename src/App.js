@@ -105,7 +105,7 @@ class App extends React.Component {
       <div className="App">
         <form className="search-bar" onSubmit={this.handleSubmit}>
           <label>
-            <input type="text" value={this.state.movieQuery} onChange={this.handleChangeMovieQuery} placeholder="Type here the name of a movie or serrie"/>
+            <input type="text" value={this.state.movieQuery} onChange={this.handleChangeMovieQuery} placeholder="Type here the name of a movie or serie"/>
           </label>
           <input type="submit" value="Submit"/>
         </form>
@@ -122,8 +122,8 @@ class App extends React.Component {
 
           <div className="grid-container-sellected-movies" hidden={this.state.movies.length === 0}>
             <div className="header-sellected-movies">
-              <p>Your sellected movies and serries</p>
-              <CustomButton title="Start sellection" onClickBtn={() => this.suggestMoviesBtn()}></CustomButton>
+              <p>Your selected movies and series</p>
+              <CustomButton title="Start selection" onClickBtn={() => this.suggestMoviesBtn()}></CustomButton>
             </div>
             {
               this.state.selectedMovies
