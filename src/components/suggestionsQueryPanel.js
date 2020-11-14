@@ -22,8 +22,9 @@ class SuggestionsQueryPanel extends React.Component {
       const bubble = document.getElementById("runtimeSliderBubble")
       
       //TODO fix this so it doesn't trigger on transition but on button click
-      if (el) el.addEventListener("transitionrun", function(){
+      if (el) el.addEventListener("transitionrun", () => {
         self.updateState();
+        self.setRuntimeBubble(runtimeSlider, bubble)
       });
 
       if (runtimeSlider && bubble) runtimeSlider.addEventListener("input", () => self.setRuntimeBubble(runtimeSlider, bubble))
@@ -72,7 +73,11 @@ class SuggestionsQueryPanel extends React.Component {
   submitQuery = (event) => {
     console.log("sumbit query")
 
-    const gengreChoice = document.querySelector('input[name="genre"]:checked').value
+    var genreChoices = [];
+    var checkboxes = document.querySelectorAll('input[name="genre"]');
+    for (var checkbox of checkboxes) {
+      if (checkbox.checked) genreChoices.push(checkbox.value);
+    }
     const languageChoice = document.querySelector('input[name="languages"]:checked').value
     const typeChoice = document.querySelector('input[name="type"]:checked').value
     const runtimeChoice = document.getElementById("runtimeSlider").value
@@ -82,17 +87,20 @@ class SuggestionsQueryPanel extends React.Component {
     const movieSuggestionResult = movieList.map(movie => {
       var moviePercentage = 0;
       
-      var addPercentage = this.calculatePercentageAdded(gengreChoice, languageChoice, typeChoice);
+      var addPercentage = this.calculatePercentageAdded(genreChoices, languageChoice, typeChoice);
 
-      if (gengreChoice !== "N/A" && movie.Genre !== "N/A") {
-        moviePercentage += movie.Genre.split(", ").includes(gengreChoice) ? addPercentage : 0;
+      if (genreChoices !== [] && movie.Genre !== "N/A") {
+        moviePercentage += genreChoices.every(genreChoice => {
+          return movie.Genre.split(", ").includes(genreChoice)
+        }) ? addPercentage : 0;
       }
+
       if (languageChoice !== "N/A" && movie.Language !== "N/A") {
         moviePercentage += movie.Language.split(", ").includes(languageChoice) ? addPercentage : 0;
       } 
       if (typeChoice !== "N/A" && movie.Type !== "N/A") moviePercentage += movie.Type === typeChoice ? addPercentage : 0    
-      if (movie.Runtime !== "N/A") moviePercentage += movie.Runtime >= runtimeChoice ? addPercentage : 0
-
+      if (movie.Runtime !== "N/A") moviePercentage += parseInt(movie.Runtime, 10) <= runtimeChoice ? addPercentage : 0
+      
       return { movie: movie, percentage: moviePercentage }
     })
 
@@ -107,13 +115,14 @@ class SuggestionsQueryPanel extends React.Component {
   calculatePercentageAdded(gengreChoice, languageChoice, typeChoice) {
     var selectedChoices = 0;
 
-    if (gengreChoice !== "N/A") selectedChoices += 1
+    if (gengreChoice !== ["N/A"]) selectedChoices += 1
     if (languageChoice !== "N/A") selectedChoices += 1
     if (typeChoice !== "N/A") selectedChoices += 1
 
     if (selectedChoices === 3) return 25;
     else if (selectedChoices === 2) return 33;
-    else return 50
+    else if (selectedChoices === 1) return 50;
+    else return 100;
   }
 
   render() {
@@ -124,7 +133,18 @@ class SuggestionsQueryPanel extends React.Component {
         <form className="query-form" onChange={this.submitQuery}>
           <div>
             Genre:
-            <CustomSelect id="genre-choice" elements={this.state.Genres} groupName="genre"></CustomSelect>
+            <div id="genre-selector">
+              {
+                this.state.Genres.map(element => {
+                  return (
+                    <div key={element}>
+                      <input type="checkbox" name="genre" id={element} value={element}></input>
+                      <label name="genre">{element}</label>
+                    </div>
+                  )
+                })
+              }
+            </div>
           </div>
           <div>
             Language:
